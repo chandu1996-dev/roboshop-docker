@@ -1,11 +1,6 @@
 services:
-  catalogue:
-    image: catalogue:v1
-    container_name: catalogue
-    depends_on:
-      - mongodb
   mongodb:
-    image: mongodb:v1 
+    image: mongodb
     container_name: mongodb
 
 networks:
