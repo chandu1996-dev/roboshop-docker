@@ -1,34 +1,34 @@
 services:
   catalogue:
-    # build:
-    #   context: ./catalogue
-    #   dockerfile: Dockerfile
+    build:
+      context: ./catalogue
+      dockerfile: Dockerfile
     image: chandukumardevops/catalogue:v1
     container_name: catalogue
     depends_on:
     - mongodb
   mongodb:
-    # build: ./mongodb
+    build: ./mongodb
     image: chandukumardevops/mongodb:v1
     container_name: mongodb
-    # volumes:
-    # - mongodb:/data/db
+    volumes:
+    - mongodb:/data/db
   redis:
     image: redis:7.0
     container_name: redis
-    # volumes:
-    # - redis:/data
+    volumes:
+    - redis:/data
   mysql:
     build: ./mysql
     image: chandukumardevops/mysql:v1
     container_name: mysql
-    # volumes:
-    # - mysql:/var/lib/mysql
+    volumes:
+    - mysql:/var/lib/mysql
   rabbitmq:
     image: rabbitmq:3
     container_name: rabbitmq
-    # volumes: # -v rabbitmq:/var/lib/rabbitmq
-    # - rabbitmq:/var/lib/rabbitmq
+    volumes: # -v rabbitmq:/var/lib/rabbitmq
+    - rabbitmq:/var/lib/rabbitmq
     environment:
       RABBITMQ_DEFAULT_USER: roboshop
       RABBITMQ_DEFAULT_PASS: roboshop123
