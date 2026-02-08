@@ -1,13 +1,13 @@
 services:
-  catalogue:
-    # build:
-    #   context: ./catalogue
-    #   dockerfile: Dockerfile
-    image: catalogue:v1
-    #chandukumardevops/catalogue:v1
-    container_name: catalogue
-    depends_on:
-    - mongodb
+  # catalogue:
+  #   # build:
+  #   #   context: ./catalogue
+  #   #   dockerfile: Dockerfile
+  #   image: catalogue:v1
+  #   #chandukumardevops/catalogue:v1
+  #   container_name: catalogue
+  #   depends_on:
+  #   - mongodb
   mongodb:
     # build: ./mongodb
     image: mongodb:v1
