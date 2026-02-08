@@ -10,7 +10,7 @@ services:
   #   - mongodb
   mongodb:
     # build: ./mongodb
-    image: mongodb:v1
+    image: mongodb:v1 .
     #chandukumardevops/mongodb:v1
     container_name: mongodb
     # volumes:
