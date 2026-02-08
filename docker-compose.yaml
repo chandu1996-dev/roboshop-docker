@@ -1,22 +1,13 @@
 services:
-  # catalogue:
-  #   # build:
-  #   #   context: ./catalogue
-  #   #   dockerfile: Dockerfile
-  #   image: catalogue:v1
-  #   #chandukumardevops/catalogue:v1
-  #   container_name: catalogue
-  #   depends_on:
-  #   - mongodb
   mongodb:
-    # build: ./mongodb
-    image: mongodb:v1 .
-    #chandukumardevops/mongodb:v1
+    image: mongodb:v1
     container_name: mongodb
-    # volumes:
-    # - mongodb:/data/db
 
-
+networks:
+  default:
+    driver: bridge
+    name: roboshop
+    external: false # true if you have created network manually using docker network command
 
 #   redis:
 #     image: redis:7.0
@@ -78,8 +69,3 @@ services:
 #     - cart
 #     - shipping
 #     - payment
-networks:
-  default:
-    driver: bridge
-    name: roboshop
-    external: false # true if you have created network manually using docker network command
